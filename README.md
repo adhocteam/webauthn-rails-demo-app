@@ -12,40 +12,31 @@ Application demonstrating a [WebAuthn](https://en.wikipedia.org/wiki/WebAuthn) p
 * PostgreSQL
 * Docker (Only for running using Docker)
 
-### Option 1 — Run it locally
-
-#### Local Setup
+### Pre Steps
 
 ```bash
 git clone https://github.com/adhocteam/webauthn-rails-demo-app
 cd webauthn-rails-demo-app/
 cp .env.example .env
-bundle install
-yarn install (or npm install)
-bundle exec rake db:setup
 ```
 
-#### Running
+### Option 1 — Run it locally
 
 ```bash
+bundle install
+yarn install
+bundle exec rake db:setup
 bundle exec rails s
 ```
 
-Now you can visit http://localhost:3000 to play with the demo site.
-
 ### Option 2 — Run it with Docker
-
-#### Prerequisites
-
-* Docker (Docker compose)
 
 #### Docker Setup
 
 ```bash
-git clone https://github.com/adhocteam/webauthn-rails-demo-app
-cd webauthn-rails-demo-app/
-cp .env.example .env
 docker compose build
 docker compose run web scripts/wait-for-it.sh db:5432 -- "rails db:setup"
 docker compose up
 ```
+
+Now you can visit http://localhost:3000 to play with the demo site.
