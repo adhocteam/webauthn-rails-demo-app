@@ -6,13 +6,15 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby File.read(".ruby-version").strip
 
 gem 'rails', "~> 6.0.6"
-gem "webauthn", "~> 2.4.0"
+gem "webauthn", "~> 2.5.2"
 
 gem 'bootsnap', '~> 1.4', require: false
 gem 'pg', '~> 1.1'
+gem 'psych', '< 4.0.0'
 gem 'puma', '~> 4.2'
 gem "rollbar", "~> 2.16"
-gem 'sassc-rails', '~> 2.0'
+gem 'sass-rails'
+gem 'sprockets', '4.2.0'
 gem 'webpacker', '~> 5.0'
 
 group :production do
